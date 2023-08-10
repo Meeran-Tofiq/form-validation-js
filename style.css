@@ -1,0 +1,66 @@
+:root {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-image: url("https://picsum.photos/1920/1080");
+}
+
+/* Form */
+
+form {
+    flex: 1;
+    margin: 10% 20%;
+    padding: 5rem 8rem;
+    background-color: lightgray;
+    opacity: 70%;
+
+    display: grid;
+    grid-template: 3fr 1fr 35px / auto;
+    gap: 1rem;
+}
+
+/* Fieldsets */
+
+fieldset {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+
+    align-items: center;
+}
+
+fieldset label {
+    justify-self: center;
+}
+
+fieldset input {
+    height: 1.25rem;
+}
+
+/* Buttons */
+form div {
+    justify-self: center;
+    align-self: center;
+}
+
+form div button {
+    opacity: 100%;
+    color: white;
+    background-color: black;
+    border-radius: 0.25rem;
+    margin: 1rem;
+    height: 2rem;
+    width: 4rem;
+    border: none;
+}
+
+form div button:active {
+    filter: brightness(50%);
+}
