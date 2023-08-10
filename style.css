@@ -49,6 +49,14 @@ fieldset input {
     height: 1.25rem;
 }
 
+.error.active {
+    background-color: red;
+    color: white;
+    font-size: smaller;
+    max-width: 100%;
+    white-space: pre-wrap;
+}
+
 /* Buttons */
 form div {
     justify-self: center;
