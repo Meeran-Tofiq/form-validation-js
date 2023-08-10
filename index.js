@@ -6,6 +6,7 @@ const password = form.querySelector('#password');
 const passwordConf = form.querySelector('#confirm-password');
 const country = form.querySelector('#country');
 const zip = form.querySelector('#zip-code');
+const submit = form.querySelector('button[type="submit"]');
 
 const fnameError = form.querySelector("#fname + span.error");
 const lnameError = form.querySelector("#lname + span.error");
@@ -14,8 +15,18 @@ const passwordError = form.querySelector("#password + span.error");
 const passwordConfError = form.querySelector("#confirm-password + span.error");
 const countryError = form.querySelector("#country + span.error");
 const zipError = form.querySelector("#zip-code + span.error");
+const submitError = form.querySelector('button[type="reset"] + span.error');
 
 const passwordStrengthRegEx = /^(?=.*[A-Z].*[A-Z])(?=.*[!@#$&*])(?=.*[0-9].*[0-9])(?=.*[a-z].*[a-z].*[a-z]).{8,}$/;
+const inputArray = [
+    fname,
+    lname,
+    email,
+    password,
+    passwordConf,
+    country,
+    zip
+]
 
 fname.addEventListener("input", function(event) {
     if (this.validity.valid) {
@@ -81,6 +92,22 @@ zip.addEventListener("input", function(event) {
         showError(this, zipError, "zip code");
     }
 });
+
+form.addEventListener("submit", function(event) {
+    event.preventDefault();
+    console.log(submit)
+
+    submitError.textContent = '';
+    submitError.className = "error";
+
+    inputArray.forEach(el => {
+        if(!el.validity.valid || el.value === undefined) {
+            submitError.textContent = "You must enter valid data in" +
+            "all required boxes to proceed.";
+            submitError.className = "error active";
+        }
+    });
+})
 
 function showError(el, errorEl, msgAddon) {
     if(el.validity.valueMissing) {
