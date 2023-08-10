@@ -26,6 +26,21 @@ form {
     gap: 1rem;
 }
 
+form .buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    height: calc(100% + 20px);
+}
+
+.buttons button[type="submit"] {
+    justify-self: end;
+}
+
+.buttons button[type="reset"] {
+    justify-self: start;
+}
+
 /* Fieldsets */
 
 fieldset {
@@ -55,6 +70,17 @@ fieldset input {
     font-size: smaller;
     max-width: 100%;
     white-space: pre-wrap;
+}
+
+.buttons .error {
+    display: flex;
+    grid-column: 1 / span 2;
+
+    height: 2rem;
+    font-size: 1rem;
+    align-items: center;
+    justify-self: center;
+    padding: 0 0.4rem;
 }
 
 /* Buttons */
